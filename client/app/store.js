@@ -3,7 +3,9 @@ import Post from "./Models/Post.js";
 let _state = {
   activePost: new Post({ title: "Post" }),
   /** @type {Post[]} */
-  posts: []
+  posts: [],
+  word: {},
+  definition: {}
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -11,7 +13,9 @@ let _state = {
  */
 let _listeners = {
   activePost: [],
-  posts: []
+  posts: [],
+  word: [],
+  definition: []
 };
 
 //NOTE You should not need to change the code from this point down

@@ -1,7 +1,9 @@
-import ValuesController from "./Controllers/ValuesController.js";
+import PostsController from "./Controllers/PostsController.js";
+import WordsController from "./Controllers/WordsController.js";
 
 class App {
-  valuesController = new ValuesController();
+  postsController = new PostsController();
+  wordsController = new WordsController();
 }
 
 window["app"] = new App();
