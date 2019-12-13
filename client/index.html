@@ -21,17 +21,64 @@
   <body>
     <header class="container-fluid">
       <div class="row">
-        <div class="col">
-          <h1>
-            So you think you'd be a good <span id="job-title">Singer</span>?
-          </h1>
+        <div class="col text-center p-3">
+          <h2 class="m-0">
+            So you think you'd be a good
+          </h2>
+          <h1 class="m-0"><span id="job-title">Singer</span>?</h1>
         </div>
       </div>
     </header>
 
     <main class="container-fluid">
-      .row>.col
+      <div class="row">
+        <div class="col text-center pt-2">
+          <img src="//placehold.it/350x350" alt="" />
+          <h3 class="pt-3">
+            You must use "<span id="random-word">word</span>" in your pitch.
+          </h3>
+          <h4 id="definition" class="text-muted">word: definition</h4>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6 offset-3 text-center">
+          <form onsubmit="app.postsController.addPostsAsync(event)">
+            <textarea
+              type="text"
+              name="post"
+              class="form-control"
+              rows="2"
+              placeholder="Give me your pitch..."
+            ></textarea>
+            <!-- FIXME may need to change textarea to input for functionality?? -->
+            <button class="btn btn-primary">Submit</button>
+            <!-- FIXME change button to fontawesome plus and move to upper rt corner of textbox -->
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-10 offset-1 p-4">
+          <!-- SECTION posts -->
+          <div class="card">
+            <h5>Top pitches</h5>
+            <hr />
+            Posts Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Officiis, tempore iste modi nisi voluptatibus atque voluptatum
+            consectetur illo laborum iure dignissimos eius dolorum qui!
+            Repellendus magni officia iusto. Consequatur, nihil.
+          </div>
+        </div>
+      </div>
     </main>
+
+    <footer class="containter-fluid">
+      <div class="row">
+        <div class="col">
+          footer
+        </div>
+      </div>
+    </footer>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="app/main.js" type="module"></script>
