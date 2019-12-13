@@ -38,11 +38,15 @@ server.use(bp.json());
 import PostsController from "./controllers/PostsController";
 import UsersController from "./controllers/UsersController";
 import JobsController from "./controllers/JobsController";
+import CommentsController from "./controllers/CommentsController";
+
 
 //NOTE remember the forward slash at the start of your path!
 server.use("/api/posts", new PostsController().router);
 server.use("/api/users", new UsersController().router);
 server.use("/api/jobs", new JobsController().router);
+server.use("/api/comments", new CommentsController().router);
+
 
 //NOTE Everything below this line always stays the same
 
