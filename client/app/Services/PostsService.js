@@ -15,7 +15,7 @@ class PostsService {
     // NOTE need to determine commit path
   }
   async addPostAsync(newPost) {
-    let res = await jackDatabase.post("", newPost);
+    let res = await jackDatabase.post("posts", newPost);
     console.log(newPost);
     this.getPostsAsync;
   }
