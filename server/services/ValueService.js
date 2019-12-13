@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Value from "../models/Value";
+import Post from "../models/Post";
 
 const _repository = mongoose.model("Value", Value);
 
