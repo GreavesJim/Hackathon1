@@ -3,11 +3,13 @@ import store from "../store.js";
 
 function _drawWords() {
   let template = ''
-  let myWord = store.State.word
+  let myWord = store.State.word.word
+  document.getElementById("random-word").innerHTML = template += `${myWord}`
 }
 
 export default class WordsController {
   constructor() {
+    store.subscribe("word", _drawWords)
     this.getWord()
   }
   async getWord() {
@@ -15,7 +17,9 @@ export default class WordsController {
       await WordsService.getWord()
     } catch (error) {
       console.error(error);
-
     }
+  }
+  async getDefinition(word) {
+
   }
 }

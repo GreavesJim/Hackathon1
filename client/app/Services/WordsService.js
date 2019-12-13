@@ -2,11 +2,19 @@ import store from "../store.js"
 
 // @ts-ignore
 let _wordsApiRandom = axios.create({
-  baseURL: "https://wordsapiv1.p.mashape.com/words?random=true"
+  baseURL: "https://wordsapiv1.p.rapidapi.com/words/?random=true",
+  headers: {
+		"x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
+		"x-rapidapi-key": "159f8ae7dbmshcb77305ee28c85fp18d00fjsn0ebaae29dd4e"
+	}
 })
 // @ts-ignore
 let _wordsApi = axios.create({
-  baseURL: "https://wordsapiv1.p.mashape.com/words"
+  baseURL: "https://wordsapiv1.p.rapidapi.com/words",
+  headers: {
+		"x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
+		"x-rapidapi-key": "159f8ae7dbmshcb77305ee28c85fp18d00fjsn0ebaae29dd4e"
+	}
 })
 
 class WordsService {
