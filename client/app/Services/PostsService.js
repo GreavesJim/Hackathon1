@@ -1,6 +1,7 @@
 import store from "../store.js";
 import Post from "../Models/Post.js";
 
+// @ts-ignore
 let jackDatabase = axios.create({
   baseURL: "http://localhost:3000/api/",
   timeout: 3000
@@ -9,7 +10,7 @@ let jackDatabase = axios.create({
 class PostsService {
   async getPostsAsync() {
     let res = await jackDatabase.get();
-    let posts = res.data.data.map(post => new Post(post));
+    let posts = res.data.map(post => new Post(post));
     store.commit("posts", posts);
     // NOTE need to determine commit path
   }

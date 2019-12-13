@@ -47,10 +47,30 @@ export default class PostsController {
     }
   }
   async deletePostAsync(postId) {
+    if (!window.confirm("Delete post?")) {
+      return;
+    }
+    await PostsService.deletePostAsync(postId);
     try {
-      await PostsService.deletePostAsync(postId);
     } catch (error) {
       console.error(error);
     }
+    // swal({
+    //   title: "Are you sure?",
+    //   text:
+    //     "Once deleted, you will not be able to recover this imaginary file!",
+    //   icon: "warning",
+    //   buttons: true,
+    //   dangerMode: true
+    // }).then(willDelete => {
+    //   if (willDelete) {
+
+    //     swal("Poof! Your imaginary file has been deleted!", {
+    //       icon: "success"
+    //     });
+    //   } else {
+    //     swal("Your imaginary file is safe!");
+    //   }
+    // });
   }
 }
