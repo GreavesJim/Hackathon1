@@ -7,7 +7,7 @@ let jackDatabase = axios.create({
 
 class PostsService {
   //delete function
-  async deleteCommnetAsync(postId) {
+  async deletePostAsync(postId) {
     jackDatabase.delete(`${postId}`);
   }
 }
