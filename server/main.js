@@ -36,10 +36,10 @@ server.use(bp.json());
 
 //NOTE we have to import access to our controllers
 import PostsController from "./controllers/PostsController";
-
+import UsersController from "./controllers/UsersController";
 //NOTE remember the forward slash at the start of your path!
-server.use("/api/posts", new PostsController().router);
-
+server.use("/api/:username/:job/posts", new PostsController().router);
+server.use("/api/users", new UsersController().router);
 //NOTE Everything below this line always stays the same
 
 //NOTE Default error handler, catches all routes with an error attached
