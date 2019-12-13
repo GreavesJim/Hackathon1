@@ -2,7 +2,7 @@ import store from "../store.js";
 import Post from "../Models/Post.js";
 
 let jackDatabase = axios.create({
-  baseURL: "https://bcw-sandbox.herokuapp.com/api/jim/posts/",
+  baseURL: "http://localhost:3000/api/",
   timeout: 3000
 });
 
