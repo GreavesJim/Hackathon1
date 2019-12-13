@@ -1,4 +1,4 @@
-import ValuesService from "../Services/ValuesService.js";
+import PostsService from "../Services/PostsService.js";
 import store from "../store.js";
 
 //Private
@@ -11,5 +11,9 @@ function _draw() {
 export default class ValuesController {
   constructor() {
     store.subscribe("values", _draw);
+  }
+
+  async deleteCommentAsync(postId) {
+    PostsService.deleteCommnetAsync(postId);
   }
 }
