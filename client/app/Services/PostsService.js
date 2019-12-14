@@ -3,35 +3,36 @@ import Post from "../Models/Post.js";
 
 // @ts-ignore
 let jackDatabase = axios.create({
-  baseURL: "http://localhost:3000/api/",
+  baseURL: "http://localhost:3000/api",
   timeout: 3000
 });
 
 class PostsService {
+  constructor() {
+    this.getPostsAsync();
+  }
   async getPostsAsync() {
-    let res = await jackDatabase.get();
+    let res = await jackDatabase.get("posts");
     let posts = res.data.map(post => new Post(post));
     store.commit("posts", posts);
     // NOTE need to determine commit path
   }
   async addPostAsync(newPost) {
     let res = await jackDatabase.post("posts", newPost);
-    console.log(newPost);
-    this.getPostsAsync;
+    this.getPostsAsync();
   }
 
-  async editPostAsync(postId) {
+  async editPostAsync(postId, change) {
+    debugger;
     let editPost = store.State.posts.find(post => postId == post._id);
-    console.log("post to be edited", editPost);
-    await jackDatabase.put(`${postId}`);
-    this.getPostsAsync;
+    await jackDatabase.put("posts/" + `${postId}`, change);
+    this.getPostsAsync();
   }
 
   async deletePostAsync(postId) {
     let deletePost = store.State.posts.find(post => postId == post._id);
-    console.log("post to delete", deletePost);
-    await jackDatabase.delete(`${postId}`);
-    this.getPostsAsync;
+    await jackDatabase.delete("posts/" + `${postId}`);
+    this.getPostsAsync();
   }
 }
 

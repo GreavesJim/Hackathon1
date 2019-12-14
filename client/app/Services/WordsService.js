@@ -1,4 +1,4 @@
-import store from "../store.js"
+import store from "../store.js";
 
 // @ts-ignore
 let _wordsApiRandom = axios.create({
@@ -7,12 +7,11 @@ let _wordsApiRandom = axios.create({
     "x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
     "x-rapidapi-key": "159f8ae7dbmshcb77305ee28c85fp18d00fjsn0ebaae29dd4e"
   }
-})
+});
 class WordsService {
   async getWord() {
-    let res = await _wordsApiRandom.get()
-    console.log("from word", res);
-    store.commit("word", res.data)
+    let res = await _wordsApiRandom.get();
+    store.commit("word", res.data);
   }
 }
 

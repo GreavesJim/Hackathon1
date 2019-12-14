@@ -4,7 +4,6 @@ import store from "../store.js";
 //Private
 function _drawJob() {
   let job = store.State.activeJob.name;
-  console.log("form darwjob", job);
   document.getElementById("job-title").innerHTML = `${job}`;
 }
 
@@ -13,7 +12,7 @@ export default class PostsController {
   constructor() {
     store.subscribe("activeJob", _drawJob);
 
-    this.getJobAsync()
+    this.getJobAsync();
   }
 
   async getJobAsync() {
@@ -28,7 +27,6 @@ export default class PostsController {
       await JobsService.getActiveJobAsync();
     } catch (error) {
       console.error(error);
-
     }
   }
 }
