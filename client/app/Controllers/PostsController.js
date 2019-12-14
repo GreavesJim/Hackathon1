@@ -6,15 +6,14 @@ function _drawPosts() {
   let template = "";
   let posts = store.State.posts;
   posts.forEach(p => (template += p.Template));
-  console.log(posts);
   document.getElementById("posts").innerHTML = template;
 }
 
 //Public
 export default class PostsController {
   constructor() {
-    store.subscribe("posts", _drawPosts);
     _drawPosts();
+    store.subscribe("posts", _drawPosts);
   }
 
   async getPostsAsync() {
@@ -28,8 +27,10 @@ export default class PostsController {
     event.preventDefault();
     let formData = event.target;
     let newPost = {
-      creator: formData.creator.value,
-      article: formData.article.value
+      jobId: store.State.activeJob._id,
+      username: formData.username.value,
+      article: formData.article.value,
+      title: store.State.activeJob.name
     };
     formData.reset();
     try {
@@ -41,7 +42,10 @@ export default class PostsController {
 
   async editPostAsync(postId) {
     try {
-      await PostsService.editPostAsync(postId);
+      let change = {
+        article: prompt("Change your post.")
+      };
+      await PostsService.editPostAsync(postId, change);
     } catch (error) {
       console.error(error);
     }
@@ -50,8 +54,8 @@ export default class PostsController {
     if (!window.confirm("Delete post?")) {
       return;
     }
-    await PostsService.deletePostAsync(postId);
     try {
+      await PostsService.deletePostAsync(postId);
     } catch (error) {
       console.error(error);
     }

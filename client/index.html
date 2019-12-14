@@ -28,7 +28,6 @@
         <div class="col text-center pt-2">
           <!-- SECTION giphy insertion -->
           <div id="play-giphy">
-            <img src="//placehold.it/350x350" alt="" />
           </div>
           <div>
             <h3 class="pt-3">
@@ -36,7 +35,7 @@
               You must use "<span id="random-word">word</span>" in your pitch.
             </h3>
             <!-- SECTION word and definition insertion -->
-            <h4 id="definition" class="text-muted">word: definition</h4>
+            <h5 id="definition" class="text-muted"></h5>
           </div>
         </div>
       </div>
@@ -50,12 +49,14 @@
               class="form-control"
               rows="2"
               placeholder="Give me your pitch..."
+              required
             ></textarea>
             <input
               type="text"
-              name="name"
+              name="username"
               class="form-control mt-2 mb-2"
-              placeholder="Your name..."
+              placeholder="Enter a username..."
+              required
             />
             <!-- TODO may need to change textarea to input for functionality?? -->
             <button class="btn btn-info">Submit</button>
