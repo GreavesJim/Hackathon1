@@ -9,6 +9,7 @@ let _state = {
   activePost: new Post({ title: "Post" }),
   /** @type {Post[]} */
   posts: [],
+  word: {},
   job: {}
 };
 
@@ -21,6 +22,7 @@ let _listeners = {
   giphy: [],
   activePost: [],
   posts: [],
+  word: [],
   job: []
 };
 
