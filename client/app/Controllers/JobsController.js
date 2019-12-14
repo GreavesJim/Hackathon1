@@ -3,16 +3,17 @@ import store from "../store.js";
 
 //Private
 function _drawJob() {
-  let job = store.State.job;
-  console.log(job);
+  let job = store.State.activeJob.name;
+  console.log("form darwjob", job);
   document.getElementById("job-title").innerHTML = `${job}`;
 }
 
 //Public
 export default class PostsController {
   constructor() {
-    store.subscribe("job", _drawJob);
-    _drawJob();
+    store.subscribe("activeJob", _drawJob);
+
+    this.getJobAsync()
   }
 
   async getJobAsync() {
@@ -20,6 +21,14 @@ export default class PostsController {
       await JobsService.getJobAsync();
     } catch (error) {
       console.error(error);
+    }
+  }
+  async getActiveJobAsync() {
+    try {
+      await JobsService.getActiveJobAsync();
+    } catch (error) {
+      console.error(error);
+
     }
   }
 }

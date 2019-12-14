@@ -10,7 +10,8 @@ let _state = {
   /** @type {Post[]} */
   posts: [],
   word: {},
-  job: {}
+  jobs: [],
+  activeJob: {}
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -23,7 +24,8 @@ let _listeners = {
   activePost: [],
   posts: [],
   word: [],
-  job: []
+  jobs: [],
+  activeJob: []
 };
 
 //NOTE You should not need to change the code from this point down
