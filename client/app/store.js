@@ -1,21 +1,29 @@
 import Post from "./Models/Post.js";
+import Giphy from "./Models/Giphy.js";
 
 let _state = {
+  activeGiphy: [],
+  /** @type {Giphy[]} */
+  giphy: [],
+
   activePost: new Post({ title: "Post" }),
   /** @type {Post[]} */
   posts: [],
   word: {},
-  definition: {}
+  job: {}
 };
 
 /** Collection of listeners to be called based on keyed state changes
  * @type {{[x:string]: function[]}}
  */
 let _listeners = {
+  activeGiphy: [],
+
+  giphy: [],
   activePost: [],
   posts: [],
   word: [],
-  definition: []
+  job: []
 };
 
 //NOTE You should not need to change the code from this point down

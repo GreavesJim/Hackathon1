@@ -11,69 +11,80 @@
   <link rel="stylesheet" href="assets/style.css" />
   <title>Document</title>
 </head>
+  <body>
+    <header class="container-fluid">
+      <div class="row">
+        <div class="col text-center p-3">
+          <h2 class="m-0">
+            So you think you'd be a good
+          </h2>
+          <h1 class="m-0"><span id="job-title">singer</span>?</h1>
 
-<body>
-  <header class="container-fluid">
-    <div class="row">
-      <div class="col text-center p-3">
-        <h2 class="m-0">
-          So you think you'd be a good
-        </h2>
-        <h1 class="m-0"><span id="job-title">Singer</span>?</h1>
       </div>
     </div>
   </header>
-
-  <main class="container-fluid">
-    <div class="row">
-      <div class="col text-center pt-2">
-        <!-- SECTION giphy insertion -->
-        <img src="//placehold.it/350x350" alt="" />
-        <h3 class="pt-3">
-          <!-- SECTION insert random word -->
-          You must use "<span id="random-word"></span>" in your pitch.
-        </h3>
-        <!-- SECTION word and definition insertion -->
-        <h4 id="definition" class="text-muted"></h4>
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col text-center pt-2" id="play-giphy">
+          <!-- SECTION giphy insertion -->
+          <img src="//placehold.it/350x350" alt="" />
+          <h3 class="pt-3">
+            <!-- SECTION insert random word -->
+            You must use "<span id="random-word">word</span>" in your pitch.
+          </h3>
+          <!-- SECTION word and definition insertion -->
+          <h4 id="definition" class="text-muted">word: definition</h4>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6 offset-3 text-center">
+          <form onsubmit="app.postsController.addPostAsync(event)">
+            <!-- TODO function name must match conroller -->
+            <textarea
+              type="text"
+              name="input"
+              class="form-control"
+              rows="2"
+              placeholder="Give me your pitch..."
+            ></textarea>
+            <input
+              type="text"
+              name="name"
+              class="form-control mt-2 mb-2"
+              placeholder="Your name..."
+            />
+            <!-- TODO may need to change textarea to input for functionality?? -->
+            <button class="btn btn-info">Submit</button>
+            <!-- TODO change button to fontawesome plus and move to upper rt corner of textbox -->
+          </form>
+        </div>
       </div>
     </div>
-    <div class="row mt-3">
-      <div class="col-6 offset-3 text-center">
-        <form onsubmit="app.postsController.addPostsAsync(event)">
-          <!-- FIXME function name must match conroller -->
-          <textarea type="text" name="post" class="form-control" rows="2"
-            placeholder="Give me your pitch..."></textarea>
-          <!-- FIXME may need to change textarea to input for functionality?? -->
-          <button class="btn btn-primary">Submit</button>
-          <!-- FIXME change button to fontawesome plus and move to upper rt corner of textbox -->
-        </form>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-10 offset-1 p-4">
-        <!-- SECTION posts -->
-        <div class="card">
-          <h5 class="pt-3 pl-2">Top pitches</h5>
-          <hr />
-          <div id="posts">
-            <!-- insert posts template -->
-          </div>
+      <div class="row">
+        <div class="col-10 offset-1 p-4 mt-3">
+          <!-- SECTION posts -->
+          <div class="card">
+            <h5 class="pt-3 pl-2">Top pitches</h5>
+            <hr />
+            <div id="posts">
+              <!-- insert posts template -->
+            </div>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="containter-fluid">
-    <div class="row">
-      <div class="col">
-        footer
+    <footer class="containter-fluid">
+      <div class="row">
+        <div class="col"></div>
       </div>
     </div>
   </footer>
 
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="app/main.js" type="module"></script>
-</body>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="app/main.js" type="module"></script>
+  </body>
 </html>
+
