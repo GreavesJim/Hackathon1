@@ -30,7 +30,8 @@ export default class PostsController {
       jobId: store.State.activeJob._id,
       username: formData.username.value,
       article: formData.article.value,
-      title: store.State.activeJob.name
+      title: store.State.activeJob.name,
+      word: store.State.word.word
     };
     formData.reset();
     try {
