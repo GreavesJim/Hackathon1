@@ -16,13 +16,6 @@ class GiphyService {
     console.log(data);
     console.log(store.State.giphy);
   }
-
-  async startGiphy() {
-    let res = store.State.giphy;
-    console.log("Hello from giphy service", res);
-    store.commit("activeGiphy", res);
-    console.log("Giphy from the store", store.State.activeGiphy);
-  }
 }
 
 const service = new GiphyService();

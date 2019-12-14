@@ -18,12 +18,4 @@ export default class GiphyController {
     store.subscribe("giphy", _drawGiphy);
     GiphyService.connectGiphy();
   }
-
-  async startGiphy() {
-    try {
-      await GiphyService.startGiphy();
-    } catch (error) {
-      console.error(error);
-    }
-  }
 }
