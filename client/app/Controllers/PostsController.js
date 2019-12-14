@@ -28,8 +28,8 @@ export default class PostsController {
     event.preventDefault();
     let formData = event.target;
     let newPost = {
-      name: formData.name.value,
-      input: formData.input.value
+      creator: formData.creator.value,
+      article: formData.article.value
     };
     formData.reset();
     try {

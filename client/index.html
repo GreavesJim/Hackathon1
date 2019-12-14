@@ -25,15 +25,19 @@
   </header>
     <main class="container-fluid">
       <div class="row">
-        <div class="col text-center pt-2" id="play-giphy">
+        <div class="col text-center pt-2">
           <!-- SECTION giphy insertion -->
-          <img src="//placehold.it/350x350" alt="" />
-          <h3 class="pt-3">
-            <!-- SECTION insert random word -->
-            You must use "<span id="random-word">word</span>" in your pitch.
-          </h3>
-          <!-- SECTION word and definition insertion -->
-          <h4 id="definition" class="text-muted">word: definition</h4>
+          <div id="play-giphy">
+            <img src="//placehold.it/350x350" alt="" />
+          </div>
+          <div>
+            <h3 class="pt-3">
+              <!-- SECTION insert random word -->
+              You must use "<span id="random-word">word</span>" in your pitch.
+            </h3>
+            <!-- SECTION word and definition insertion -->
+            <h4 id="definition" class="text-muted">word: definition</h4>
+          </div>
         </div>
       </div>
       <div class="row mt-3">
@@ -42,7 +46,7 @@
             <!-- TODO function name must match conroller -->
             <textarea
               type="text"
-              name="input"
+              name="article"
               class="form-control"
               rows="2"
               placeholder="Give me your pitch..."
