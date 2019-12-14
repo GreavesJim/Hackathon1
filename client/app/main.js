@@ -1,7 +1,7 @@
-import ValuesController from "./Controllers/ValuesController.js";
+import GiphysController from "./Controllers/GiphysController.js";
 
 class App {
-  valuesController = new ValuesController();
+  giphysController = new GiphysController();
 }
 
 window["app"] = new App();

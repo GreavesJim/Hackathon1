@@ -1,5 +1,7 @@
 import store from "../store.js";
+import Giphy from "../Models/Giphy.js";
 
+// @ts-ignore
 let _giphyAPI = axios.create({
   baseURL:
     "https://api.giphy.com/v1/gifs/random?api_key=bTA0RtS9RXmQa6KaxGJ8mGNP4ZWXZB5r&tag=&rating=PG-13",
@@ -9,8 +11,9 @@ let _giphyAPI = axios.create({
 class GiphyService {
   async connectGiphy() {
     let res = await _giphyAPI.get("");
-    store.commit("giphy", res.data.data);
-    console.log(res.data);
+    let data = new Giphy(res.data.data);
+    store.commit("giphy", data);
+    console.log(data);
     console.log(store.State.giphy);
   }
 

@@ -15,6 +15,9 @@ let _state = {
  * @type {{[x:string]: function[]}}
  */
 let _listeners = {
+  activeGiphy: [],
+
+  giphy: [],
   activePost: [],
   posts: []
 };
