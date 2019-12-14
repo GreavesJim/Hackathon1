@@ -1,4 +1,5 @@
 import store from "../store.js";
+import GiphysService from "../Services/GiphysService.js";
 
 // @ts-ignore
 let jackDatabase = axios.create({
@@ -13,6 +14,7 @@ class JobsService {
     //  NOTE need to determine file path
     store.commit("jobs", jobs);
     this.getActiveJobAsync();
+    GiphysService.connectGiphy();
   }
   async getActiveJobAsync() {
     let max = store.State.jobs.length;
