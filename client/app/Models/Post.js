@@ -4,6 +4,7 @@ export default class Post {
     this.username = data.username;
     this.title = data.title;
     this._id = data._id;
+    this.word = data.word
   }
   // NOTE title is the random word the user must use; may have to refactor how to populate this
 
@@ -22,6 +23,7 @@ export default class Post {
             <div class="media-body">
                 <div class="m-0 pl-3">
                     <span>${this.title}</span>
+                    <p class="text-primary m-0">${this.word}</p>
                     <p class="text-danger m-0">${this.username}</p>
                 </div>
                 <p class="m-0 pl-3">
