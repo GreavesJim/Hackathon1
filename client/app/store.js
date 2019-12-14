@@ -1,6 +1,11 @@
 import Post from "./Models/Post.js";
+import Giphy from "./Models/Giphy.js";
 
 let _state = {
+  activeGiphy: [],
+  /** @type {Giphy[]} */
+  giphy: [],
+
   activePost: new Post({ title: "Post" }),
   /** @type {Post[]} */
   posts: [],
@@ -11,6 +16,9 @@ let _state = {
  * @type {{[x:string]: function[]}}
  */
 let _listeners = {
+  activeGiphy: [],
+
+  giphy: [],
   activePost: [],
   posts: [],
   job: []

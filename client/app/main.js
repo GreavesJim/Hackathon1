@@ -1,7 +1,8 @@
-import PostsController from "./Controllers/PostsController.js";
+
+import GiphysController from "./Controllers/GiphysController.js";
 
 class App {
-  postsController = new PostsController();
+  giphysController = new GiphysController();
 }
 
 window["app"] = new App();
