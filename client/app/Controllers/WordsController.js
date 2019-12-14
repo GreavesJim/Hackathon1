@@ -2,9 +2,12 @@ import WordsService from "../Services/WordsService.js";
 import store from "../store.js";
 
 function _drawWords() {
-  let template = ''
+  let template1 = ''
+  let template2 = ''
   let myWord = store.State.word.word
-  document.getElementById("random-word").innerHTML = template += `${myWord}`
+  let myDef = store.State.word.results[0].definition
+  document.getElementById("random-word").innerHTML = template1 += `${myWord}`
+  document.getElementById("definition").innerHTML = template2 += `${myWord}: ${myDef}`
 }
 
 export default class WordsController {
@@ -19,7 +22,5 @@ export default class WordsController {
       console.error(error);
     }
   }
-  async getDefinition(word) {
 
-  }
 }
